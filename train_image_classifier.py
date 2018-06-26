@@ -56,15 +56,15 @@ tf.app.flags.DEFINE_integer(
     'The number of threads used to create the batches.')
 
 tf.app.flags.DEFINE_integer(
-    'log_every_n_steps', 10,
+    'log_every_n_steps', 5,
     'The frequency with which logs are print.')
 
 tf.app.flags.DEFINE_integer(
-    'save_summaries_secs', 600,
+    'save_summaries_secs', 120,
     'The frequency with which summaries are saved, in seconds.')
 
 tf.app.flags.DEFINE_integer(
-    'save_interval_secs', 600,
+    'save_interval_secs', 120,
     'The frequency with which the model is saved, in seconds.')
 
 tf.app.flags.DEFINE_integer(
