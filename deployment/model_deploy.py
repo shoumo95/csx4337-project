@@ -132,7 +132,7 @@ DeployedModel = collections.namedtuple('DeployedModel',
 
 # Default parameters for DeploymentConfig
 _deployment_params = {'num_clones': 1,
-                      'clone_on_cpu': False,
+                      'clone_on_cpu': True,
                       'replica_id': 0,
                       'num_replicas': 1,
                       'num_ps_tasks': 0,

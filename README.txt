@@ -31,7 +31,7 @@ Training of Pre-Trained DenseNet 121 model with Transfer Learning
 
 DATASET_DIR=../data/flowers
 TRAIN_TL_DIR=./train_transfer_learning_logs
-NUM_CLONES=2
+NUM_CLONES=1
 CHECKPOINT_TL_PATH=./transferlearning/tf-densenet121.ckpt
 
 python train_image_classifier.py \
@@ -52,7 +52,7 @@ Training of DenseNet 121 model from scratch.
 
 DATASET_DIR=../data/flowers
 TRAIN_NTL_DIR=./train_scratch_logs
-NUM_CLONES=2
+NUM_CLONES=1
 python train_image_classifier.py \
     --train_dir=${TRAIN_NTL_DIR} \
     --dataset_name=flowers \
@@ -68,7 +68,7 @@ Validation of Densenet 121 Model Trained from Scratch
 DATASET_DIR=../data/flowers
 EVAL_DIR=./eval_scratch_logs
 CHECKPOINT_M_PATH=./train_scratch_logs
-NUM_CLONES=2
+NUM_CLONES=1
 
 
 python eval_image_classifier.py \
@@ -87,7 +87,7 @@ Validation of Transfer Learned Densenet 121 Model
 DATASET_DIR=../data/flowers
 EVAL_TL_DIR=./eval_transfer_learning_logs
 CHECKPOINT_TLM_PATH=./train_transfer_learning_logs
-NUM_CLONES=2
+NUM_CLONES=1
 
 python eval_image_classifier.py \
     --eval_dir=${EVAL_TL_DIR} \
