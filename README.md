@@ -116,6 +116,18 @@ python eval_image_classifier.py \
     --num_clones=${NUM_CLONES} \
     --checkpoint_path=${CHECKPOINT_TLM_PATH}
 
+
+## Results 
+
+Results are all organized under Tensorboard
+
+### Tensorboard
+
+Issue the command in the main project directory
+
+tensorboard --logdir=
+
+All folders for Training and Validation with or without Transfer Learning for the DenseNet 121 model are organized under the main folder with self discovery.
 ### GPU Usage
 
 For use with GPUs set the following flags :
