@@ -1,4 +1,4 @@
-# csx4337-project
+## csx4337-project
 
 Student Name: Soumyendu Sarkar 
 Student ID: X123160 
@@ -13,7 +13,7 @@ Data Source : http://download.tensorflow.org/example_images/flower_photos.tgz
 This project has been chosen to demonstrate the power of transfer learning and to show how smaller image datasets can be effectively used by convolutional neural network with limited computation to create a highly accurate image classifier.
 
 
-# Requirements
+## Requirements
 
 Tensorflow 1.8 
 Python 3.5+
@@ -27,7 +27,7 @@ pip3 install seaborn
 pip3 install pyprind
 pip3 install pillow
 
-## Pre-trained Models
+### Pre-trained Models
 
 The top-1/5 accuracy rates by using single center crop (crop size: 224x224, image size: 256xN)
 
