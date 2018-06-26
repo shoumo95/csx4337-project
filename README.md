@@ -116,7 +116,6 @@ python eval_image_classifier.py \
     --num_clones=${NUM_CLONES} \
     --checkpoint_path=${CHECKPOINT_TLM_PATH}
 
-```
 ### GPU Usage
 
 For use with GPUs set the following flags :
