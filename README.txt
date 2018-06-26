@@ -3,6 +3,18 @@ Requires :
   Python 3.5+
 
 
+Install the following Packages :
+
+pip3 install pandas
+pip3 install sklearn
+pip3 install scipy
+pip3 install matplotlib
+pip3 install seaborn
+pip3 install pyprind
+pip3 install pillow
+
+
+
 Step-by-step Example of training on flowers dataset.
 
 Downloading ans converting flowers dataset
@@ -15,7 +27,7 @@ python download_and_convert_data.py \
 
 
 
-Transfer Learning from Pre-Trained DenseNet 121 model parameters 
+Training of Pre-Trained DenseNet 121 model with Transfer Learning
 
 DATASET_DIR=../data/flowers
 TRAIN_TL_DIR=./train_transfer_learning_logs
@@ -36,7 +48,7 @@ python train_image_classifier.py \
 
 
 
-Training a model from scratch.
+Training of DenseNet 121 model from scratch.
 
 DATASET_DIR=../data/flowers
 TRAIN_NTL_DIR=./train_scratch_logs
@@ -51,23 +63,7 @@ python train_image_classifier.py \
 
 
 
-
-
-export DATA_HOME=${PWD}/data
-export CODE_HOME=${PWD}
-export DATA_DIR=${DATA_HOME}/flowers
-export TRAIN_DIR=${CODE_HOME}/train_logs
-export NUM_CLONES=2
-python train_image_classifier.py \
-    --train_dir=${TRAIN_DIR} \
-    --dataset_name=flowers \
-    --dataset_split_name=train \
-    --dataset_dir=${DATA_DIR} \
-    --model_name=densenet121 \
-    --num_clones=${NUM_CLONES}
-
-
-Validation
+Validation of Densenet 121 Model Trained from Scratch
 
 DATASET_DIR=../data/flowers
 EVAL_DIR=./eval_scratch_logs
@@ -86,45 +82,20 @@ python eval_image_classifier.py \
 
 
 
-#!/usr/bin/env bash
-export DATA_HOME=${PWD}/data
-export CODE_HOME=${PWD}
-export DATA_DIR=${DATA_HOME}/flowers
-export TRAIN_DIR=${CODE_HOME}/train_logs
-export NUM_CLONES=2
-
-# to evaluate a specific checkpoint
-export CHECKPOINT_PATH_EVAL=${TRAIN_DIR}
-
-export EVAL_DIR=${CODE_HOME}/eval_logs
-
-python eval_image_classifier.py \
-    --dataset_name=flowers \
-    --dataset_split_name=validation \
-    --dataset_dir=${DATA_DIR} \
-    --model_name=densenet121 \
-    --checkpoint_path=${CHECKPOINT_PATH_EVAL} \
-    --eval_dir=${EVAL_DIR}
-
-
-
-
-
-
-
-Validation
+Validation of Transfer Learned Densenet 121 Model
 
 DATASET_DIR=../data/flowers
-EVAL_DIR=./eval_logs
-CHECKPOINT_M_PATH=./train_transfer_learning_logs/model.ckpt-1888
-
+EVAL_TL_DIR=./eval_transfer_learning_logs
+CHECKPOINT_TLM_PATH=./train_transfer_learning_logs
+NUM_CLONES=2
 
 python eval_image_classifier.py \
-    --eval_dir=${EVAL_DIR} \
+    --eval_dir=${EVAL_TL_DIR} \
     --dataset_name=flowers \
     --dataset_split_name=validation \
     --dataset_dir=${DATASET_DIR} \
     --model_name=densenet121 \
-    --checkpoint_path=${CHECKPOINT_TM_PATH}
+    --num_clones=${NUM_CLONES} \
+    --checkpoint_path=${CHECKPOINT_TLM_PATH}
 
 
